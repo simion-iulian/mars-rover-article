@@ -1,7 +1,8 @@
 public class MarsRover {
-  private final int x;
-  private final int y;
-  private final String cardinal;
+  private int x;
+  private int y;
+  private String cardinal;
+  private String MOVE_COMMAND = "M";
 
   public MarsRover(int x, int y, String cardinal) {
 
@@ -11,6 +12,8 @@ public class MarsRover {
   }
 
   public String execute(String commands) {
+    if(commands.equals(MOVE_COMMAND))
+      y++;
     return formatCoordinate();
   }
 

@@ -2,6 +2,7 @@ import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class MarsRoverShould {
@@ -20,6 +21,24 @@ public class MarsRoverShould {
 
     final String actualCoordinate = rover.execute(emptyCommand);
 
-    assertThat(actualCoordinate, CoreMatchers.is(expectedCoordinate));
+    assertThat(actualCoordinate, is(expectedCoordinate));
+  }
+
+  @ParameterizedTest
+  @CsvSource({
+    "1, 2, N, M, '1 3 N'",
+    "1, 3, N, M, '1 4 N'"
+  })
+  public void
+  move(
+    int initialX, int initialY, String initialCardinal,
+    String commands,
+    String expectedCoordinate
+  ) {
+    final MarsRover rover = new MarsRover(initialX, initialY, initialCardinal);
+
+    String actualCoordinate = rover.execute(commands);
+
+    assertThat(actualCoordinate, is(expectedCoordinate));
   }
 }
