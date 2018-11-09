@@ -18,13 +18,17 @@ public class MarsRover {
 
     for (String command:individualCommands) {
       if(command.equals(MOVE_COMMAND))
-        if(cardinal.equals(NORTH))
+        if(facing(NORTH))
           y++;
-        if(cardinal.equals(SOUTH))
+        if(facing(SOUTH))
           y--;
     }
 
     return formatCoordinate();
+  }
+
+  private boolean facing(String direction) {
+    return this.cardinal.equals(direction);
   }
 
   private String formatCoordinate() {
