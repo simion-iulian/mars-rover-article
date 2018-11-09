@@ -14,19 +14,21 @@ public class MarsRover {
   }
 
   public String execute(String input) {
-
     String[] commands = input.split("");
 
     for (String command:commands) {
-
       if(isMove(command))
-        if(facing(NORTH))
-          y++;
-        if(facing(SOUTH))
-          y--;
+        move();
     }
 
     return formatCoordinate();
+  }
+
+  private void move() {
+    if(facing(NORTH))
+      y++;
+    if(facing(SOUTH))
+      y--;
   }
 
   private boolean isMove(String command) {
