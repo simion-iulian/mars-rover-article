@@ -27,7 +27,8 @@ public class MarsRoverShould {
   @ParameterizedTest
   @CsvSource({
     "1, 2, N, M, '1 3 N'",
-    "1, 3, N, M, '1 4 N'"
+    "1, 3, N, M, '1 4 N'",
+    "1, 3, N, MM, '1 5 N'"
   })
   public void
   move(

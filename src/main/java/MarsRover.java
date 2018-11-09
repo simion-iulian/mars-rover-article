@@ -12,8 +12,13 @@ public class MarsRover {
   }
 
   public String execute(String commands) {
-    if(commands.equals(MOVE_COMMAND))
-      y++;
+    String[] individualCommands = commands.split("");
+
+    for (String command:individualCommands) {
+      if(command.equals(MOVE_COMMAND))
+        y++;
+    }
+
     return formatCoordinate();
   }
 
