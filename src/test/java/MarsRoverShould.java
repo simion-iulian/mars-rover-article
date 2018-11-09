@@ -34,6 +34,7 @@ public class MarsRoverShould {
     "1, 8, S, MMMMM, '1 3 S'",
     "1, 1, E, M, '2 1 E'",
     "1, 1, E, MMMMM, '6 1 E'",
+    "8, 1, W, M, '7 1 W'",
   })
   public void
   move(

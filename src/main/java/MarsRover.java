@@ -8,6 +8,8 @@ public class MarsRover {
   private final String COORDINATE_FORMAT = "%d %d %s";
   private final String EAST = "E";
   private final int RIGHT = 1;
+  private final String WEST = "W";
+  private final int LEFT = -1;
 
   private String MOVE_COMMAND = "M";
 
@@ -39,6 +41,8 @@ public class MarsRover {
       moveVertically(DOWN);
     if(facing(EAST))
       moveHorizontally(RIGHT);
+    if(facing(WEST))
+      moveHorizontally(LEFT);
   }
 
   private void moveVertically(int stepSize) {
