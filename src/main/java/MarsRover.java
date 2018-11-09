@@ -13,11 +13,11 @@ public class MarsRover {
     this.cardinal = cardinal;
   }
 
-  public String execute(String commands) {
+  public String execute(String input) {
 
-    String[] individualCommands = commands.split("");
+    String[] commands = input.split("");
 
-    for (String command:individualCommands) {
+    for (String command:commands) {
 
       if(isMove(command))
         if(facing(NORTH))
