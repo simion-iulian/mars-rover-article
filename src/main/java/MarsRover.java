@@ -16,7 +16,10 @@ public class MarsRover {
 
     for (String command:individualCommands) {
       if(command.equals(MOVE_COMMAND))
-        y++;
+        if(cardinal.equals("N"))
+          y++;
+        if(cardinal.equals("S"))
+          y--;
     }
 
     return formatCoordinate();
