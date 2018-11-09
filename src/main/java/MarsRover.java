@@ -1,4 +1,6 @@
 public class MarsRover {
+  private final String NORTH = "N";
+  private final String SOUTH = "S";
   private int x;
   private int y;
   private String cardinal;
@@ -16,9 +18,9 @@ public class MarsRover {
 
     for (String command:individualCommands) {
       if(command.equals(MOVE_COMMAND))
-        if(cardinal.equals("N"))
+        if(cardinal.equals(NORTH))
           y++;
-        if(cardinal.equals("S"))
+        if(cardinal.equals(SOUTH))
           y--;
     }
 
