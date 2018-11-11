@@ -1,15 +1,16 @@
 public class MarsRover {
   private final String NORTH = "N";
   private final String SOUTH = "S";
+  private final String EAST = "E";
+  private final String WEST = "W";
 
   private final int UP = 1;
   private final int DOWN = -1;
+  private final int RIGHT = 1;
+  private final int LEFT = -1;
 
   private final String COORDINATE_FORMAT = "%d %d %s";
-  private final String EAST = "E";
-  private final int RIGHT = 1;
-  private final String WEST = "W";
-  private final int LEFT = -1;
+  private final String INTO_CHARACTERS = "";
 
   private String MOVE_COMMAND = "M";
 
@@ -24,14 +25,16 @@ public class MarsRover {
   }
 
   public String execute(String input) {
-    String[] commands = input.split("");
-
-    for (String command:commands) {
+    for (String command : commandsFrom(input)) {
       if(isMove(command))
         move();
     }
 
     return formatCoordinate();
+  }
+
+  private String[] commandsFrom(String input) {
+    return input.split(INTO_CHARACTERS);
   }
 
   private void move() {
