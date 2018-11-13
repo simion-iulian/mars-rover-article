@@ -14,14 +14,10 @@ public class MarsRover {
 
   private String MOVE_COMMAND = "M";
 
-  private int x;
-  private int y;
   private String cardinal;
   private Position position;
 
   public MarsRover(Position position) {
-    this.x = position.X();
-    this.y = position.Y();
     this.cardinal = position.cardinal();
     this.position = position;
   }
@@ -55,10 +51,10 @@ public class MarsRover {
   }
 
   private void moveVertically(int stepSize) {
-    y += stepSize;
+    position = new Position(x(), position.y()+stepSize, cardinal);
   }
   private void moveHorizontally(int stepSize) {
-    x += stepSize;
+    position = new Position(position.x()+stepSize, position.y(), cardinal);
   }
 
   private boolean isMove(String command) {
@@ -70,6 +66,14 @@ public class MarsRover {
   }
 
   private String formatPosition() {
-    return String.format(POSITION_FORMAT, x, y, cardinal);
+    return String.format(POSITION_FORMAT, x(), y(), cardinal);
+  }
+
+  private int x() {
+    return position.x();
+  }
+
+  private int y(){
+    return position.y();
   }
 }

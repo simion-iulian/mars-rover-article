@@ -9,11 +9,11 @@ class Position {
     this.cardinal = cardinal;
   }
 
-  public int X() {
+  public int x() {
     return x;
   }
 
-  public int Y() {
+  public int y() {
     return y;
   }
 
