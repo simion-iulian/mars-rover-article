@@ -17,11 +17,13 @@ public class MarsRover {
   private int x;
   private int y;
   private String cardinal;
+  private Coordinate coordinate;
 
-  public MarsRover(int x, int y, String cardinal) {
-    this.x = x;
-    this.y = y;
-    this.cardinal = cardinal;
+  public MarsRover(Coordinate coordinate) {
+    this.x = coordinate.X();
+    this.y = coordinate.Y();
+    this.cardinal = coordinate.cardinal();
+    this.coordinate = coordinate;
   }
 
   public String execute(String input) {
@@ -38,10 +40,14 @@ public class MarsRover {
   }
 
   private void move() {
+
+
+
     if(facing(NORTH))
       moveVertically(UP);
     if(facing(SOUTH))
       moveVertically(DOWN);
+
     if(facing(EAST))
       moveHorizontally(RIGHT);
     if(facing(WEST))

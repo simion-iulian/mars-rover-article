@@ -1,4 +1,3 @@
-import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -17,7 +16,7 @@ public class MarsRoverShould {
     String expectedCoordinate) {
 
     final String emptyCommand = "";
-    final MarsRover rover = new MarsRover(initialX, initialY, initialCardinal);
+    final MarsRover rover = new MarsRover(new Coordinate(initialX, initialY, initialCardinal));
 
     final String actualCoordinate = rover.execute(emptyCommand);
 
@@ -43,7 +42,7 @@ public class MarsRoverShould {
     String commands,
     String expectedCoordinate
   ) {
-    final MarsRover rover = new MarsRover(initialX, initialY, initialCardinal);
+    final MarsRover rover = new MarsRover(new Coordinate(initialX, initialY, initialCardinal));
 
     String actualCoordinate = rover.execute(commands);
 
