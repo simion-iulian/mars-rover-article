@@ -35,17 +35,18 @@ public class MarsRover {
 
   private void move() {
 
-
-
     if(facing(NORTH))
       moveVertically(UP);
     if(facing(SOUTH))
       moveVertically(DOWN);
-
     if(facing(EAST))
       moveHorizontally(RIGHT);
     if(facing(WEST))
       moveHorizontally(LEFT);
+  }
+
+  private boolean facing(String direction) {
+    return position.facing(direction);
   }
 
   private void moveVertically(int stepSize) {
@@ -57,10 +58,6 @@ public class MarsRover {
 
   private boolean isMove(String command) {
     return command.equals(MOVE_COMMAND);
-  }
-
-  private boolean facing(String direction) {
-    return this.position.cardinal().equals(direction);
   }
 
   private String formatPosition() {

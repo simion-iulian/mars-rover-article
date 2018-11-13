@@ -20,4 +20,8 @@ class Position {
   public String cardinal() {
     return cardinal;
   }
+
+  boolean facing(String direction) {
+    return cardinal.equals(direction);
+  }
 }
