@@ -9,7 +9,7 @@ public class MarsRover {
   private final int RIGHT = 1;
   private final int LEFT = -1;
 
-  private final String COORDINATE_FORMAT = "%d %d %s";
+  private final String POSITION_FORMAT = "%d %d %s";
   private final String INTO_CHARACTERS = "";
 
   private String MOVE_COMMAND = "M";
@@ -17,13 +17,13 @@ public class MarsRover {
   private int x;
   private int y;
   private String cardinal;
-  private Coordinate coordinate;
+  private Position position;
 
-  public MarsRover(Coordinate coordinate) {
-    this.x = coordinate.X();
-    this.y = coordinate.Y();
-    this.cardinal = coordinate.cardinal();
-    this.coordinate = coordinate;
+  public MarsRover(Position position) {
+    this.x = position.X();
+    this.y = position.Y();
+    this.cardinal = position.cardinal();
+    this.position = position;
   }
 
   public String execute(String input) {
@@ -32,7 +32,7 @@ public class MarsRover {
         move();
     }
 
-    return formatCoordinate();
+    return formatPosition();
   }
 
   private String[] commandsFrom(String input) {
@@ -69,7 +69,7 @@ public class MarsRover {
     return this.cardinal.equals(direction);
   }
 
-  private String formatCoordinate() {
-    return String.format(COORDINATE_FORMAT, x, y, cardinal);
+  private String formatPosition() {
+    return String.format(POSITION_FORMAT, x, y, cardinal);
   }
 }
