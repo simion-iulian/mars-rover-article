@@ -76,4 +76,9 @@ class Rover {
   private Rover moveHorizontally(int stepSize) {
     return new Rover(x + stepSize, y, cardinal);
   }
+
+  String formatPosition() {
+    String POSITION_FORMAT = "%d %d %s";
+    return String.format(POSITION_FORMAT, x(), y(), cardinal());
+  }
 }
