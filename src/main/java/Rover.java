@@ -1,7 +1,7 @@
 class Rover {
-  private int x;
-  private int y;
-  private String cardinal;
+  private final int x;
+  private final int y;
+  private final String cardinal;
 
   private final String NORTH = "N";
   private final String SOUTH = "S";
@@ -59,9 +59,9 @@ class Rover {
     if(facing(SOUTH))
       return moveVertically(DOWN);
     if(facing(EAST))
-      moveHorizontally(RIGHT);
+      return moveHorizontally(RIGHT);
     if(facing(WEST))
-      moveHorizontally(LEFT);
+      return moveHorizontally(LEFT);
     return this;
   }
 
@@ -70,10 +70,10 @@ class Rover {
   }
 
   private Rover moveVertically(int stepSize) {
-    return new Rover(x, y+=stepSize, cardinal);
+    return new Rover(x, y + stepSize, cardinal);
   }
 
-  private void moveHorizontally(int stepSize) {
-    x+=stepSize;
+  private Rover moveHorizontally(int stepSize) {
+    return new Rover(x + stepSize, y, cardinal);
   }
 }
