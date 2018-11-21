@@ -25,7 +25,7 @@ class Position {
     return cardinal.equals(direction);
   }
 
-  public Position turn() {
+  public Position turnRight() {
     if(cardinal.equals("N"))
       return new Position(x, y, "E");
     if(cardinal.equals("E"))
@@ -33,5 +33,16 @@ class Position {
     if(cardinal.equals("S"))
       return new Position(x,y,"W");
     return new Position(x,y,"N");
+  }
+
+  public Position turnLeft() {
+    if(cardinal.equals("N"))
+      return new Position(x, y, "W");
+    if(cardinal.equals("W"))
+      return new Position(x,y,"S");
+    if(cardinal.equals("S"))
+      return new Position(x,y,"E");
+    return new Position(x,y,"N");
+
   }
 }
