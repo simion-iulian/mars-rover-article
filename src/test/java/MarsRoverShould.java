@@ -56,6 +56,8 @@ public class MarsRoverShould {
     "N, R, E",
     "N, RR, S",
     "N, RRR, W",
+    "N, RRRR, N",
+    "N, RRRRRR, S",
   })
   void turn(
     String initialCardinal,

@@ -30,6 +30,8 @@ class Position {
       return new Position(x, y, "E");
     if(cardinal.equals("E"))
       return new Position(x,y,"S");
-    return new Position(x,y,"W");
+    if(cardinal.equals("S"))
+      return new Position(x,y,"W");
+    return new Position(x,y,"N");
   }
 }
