@@ -55,9 +55,9 @@ class Rover {
 
   Rover move() {
     if(facing(NORTH))
-      moveVertically(UP);
+      return moveVertically(UP);
     if(facing(SOUTH))
-      moveVertically(DOWN);
+      return moveVertically(DOWN);
     if(facing(EAST))
       moveHorizontally(RIGHT);
     if(facing(WEST))
@@ -69,8 +69,8 @@ class Rover {
     return cardinal.equals(direction);
   }
 
-  private void moveVertically(int stepSize) {
-    y+=stepSize;
+  private Rover moveVertically(int stepSize) {
+    return new Rover(x, y+=stepSize, cardinal);
   }
 
   private void moveHorizontally(int stepSize) {
