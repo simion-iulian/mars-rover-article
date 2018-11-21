@@ -28,6 +28,8 @@ class Position {
   public Position turn() {
     if(cardinal.equals("N"))
       return new Position(x, y, "E");
-    return new Position(x,y,"S");
+    if(cardinal.equals("E"))
+      return new Position(x,y,"S");
+    return new Position(x,y,"W");
   }
 }

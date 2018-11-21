@@ -55,6 +55,7 @@ public class MarsRoverShould {
   @CsvSource({
     "N, R, E",
     "N, RR, S",
+    "N, RRR, W",
   })
   void turn(
     String initialCardinal,
