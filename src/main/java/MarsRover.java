@@ -25,7 +25,6 @@ public class MarsRover {
       if(isMove(command))
         move();
     }
-
     return formatPosition();
   }
 

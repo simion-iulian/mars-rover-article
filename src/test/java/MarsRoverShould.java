@@ -50,4 +50,23 @@ public class MarsRoverShould {
 
     assertThat(actualCoordinate, is(expectedCoordinate));
   }
+
+  @ParameterizedTest
+  @CsvSource({
+    "N, R, E",
+  })
+  void turn(
+    String initialCardinal,
+    String commands,
+    String expectedCardinal) {
+
+    final Position initialPosition = new Position(1, 1, initialCardinal);
+    final MarsRover rover = new MarsRover(initialPosition);
+
+    final String actualPosition = rover.execute(commands);
+
+    final String expectedPosition = "1 1 " + expectedCardinal;
+
+    assertThat(actualPosition, is(expectedPosition));
+  }
 }
