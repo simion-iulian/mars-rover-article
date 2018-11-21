@@ -53,7 +53,7 @@ class Rover {
 
   }
 
-  void move() {
+  Rover move() {
     if(facing(NORTH))
       moveVertically(UP);
     if(facing(SOUTH))
@@ -62,6 +62,7 @@ class Rover {
       moveHorizontally(RIGHT);
     if(facing(WEST))
       moveHorizontally(LEFT);
+    return this;
   }
 
   private boolean facing(String direction) {

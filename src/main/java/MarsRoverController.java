@@ -25,7 +25,7 @@ public class MarsRoverController {
   public String execute(String input) {
     for (String command : commandsFrom(input)) {
       if(isMove(command))
-        rover.move();
+        rover = rover.move();
       if(isTurnRight(command))
         rover = rover.turnRight();
       if(isTurnLeft(command))
