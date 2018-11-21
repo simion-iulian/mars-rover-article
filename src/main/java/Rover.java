@@ -1,7 +1,17 @@
 class Rover {
-  private final int x;
-  private final int y;
-  private final String cardinal;
+  private int x;
+  private int y;
+  private String cardinal;
+
+  private final String NORTH = "N";
+  private final String SOUTH = "S";
+  private final String EAST = "E";
+  private final String WEST = "W";
+
+  private final int UP = 1;
+  private final int DOWN = -1;
+  private final int RIGHT = 1;
+  private final int LEFT = -1;
 
   Rover(int x, int y, String cardinal) {
     this.x = x;
@@ -21,9 +31,6 @@ class Rover {
     return cardinal;
   }
 
-  boolean facing(String direction) {
-    return cardinal.equals(direction);
-  }
 
   public Rover turnRight() {
     if(cardinal.equals("N"))
@@ -44,5 +51,28 @@ class Rover {
       return new Rover(x,y,"E");
     return new Rover(x,y,"N");
 
+  }
+
+  void move() {
+    if(facing(NORTH))
+      moveVertically(UP);
+    if(facing(SOUTH))
+      moveVertically(DOWN);
+    if(facing(EAST))
+      moveHorizontally(RIGHT);
+    if(facing(WEST))
+      moveHorizontally(LEFT);
+  }
+
+  private boolean facing(String direction) {
+    return cardinal.equals(direction);
+  }
+
+  private void moveVertically(int stepSize) {
+    y+=stepSize;
+  }
+
+  private void moveHorizontally(int stepSize) {
+    x+=stepSize;
   }
 }
