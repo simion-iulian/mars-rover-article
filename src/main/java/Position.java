@@ -24,4 +24,8 @@ class Position {
   boolean facing(String direction) {
     return cardinal.equals(direction);
   }
+
+  public Position turn() {
+    return new Position(x, y, "E");
+  }
 }

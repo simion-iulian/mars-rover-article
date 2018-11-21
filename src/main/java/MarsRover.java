@@ -25,7 +25,7 @@ public class MarsRover {
       if(isMove(command))
         move();
       if(command.equals("R"))
-        position = new Position(position.x(), position.y(), "E");
+        position = position.turn();
     }
     return formatPosition();
   }
