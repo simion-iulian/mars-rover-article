@@ -26,6 +26,8 @@ class Position {
   }
 
   public Position turn() {
-    return new Position(x, y, "E");
+    if(cardinal.equals("N"))
+      return new Position(x, y, "E");
+    return new Position(x,y,"S");
   }
 }

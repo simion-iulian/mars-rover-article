@@ -54,6 +54,7 @@ public class MarsRoverShould {
   @ParameterizedTest
   @CsvSource({
     "N, R, E",
+    "N, RR, S",
   })
   void turn(
     String initialCardinal,
