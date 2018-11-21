@@ -7,7 +7,7 @@ A rover's position and location is represented by a combination of x and y co-or
 and a letter representing one of the four cardinal compass points. 
 
 
-The plateau is divided up into a grid to simplify navigation. An example position might be 1, 1, N, 
+The plateau is divided up into a grid to simplify navigation. An example rover might be 1, 1, N, 
 which means the rover is in the bottom left corner and facing North.
 In order to control a rover, NASA sends a simple string of letters. The possible letters are 'L', 'R' and 'M'. 'L' and 'R' makes the rover spin 90 degrees left or right respectively, without moving from its current spot. 'M' means move forward one grid point, and maintain the same heading.
 
@@ -19,8 +19,8 @@ The rover wraps around if it reaches the end of the grid.
 
 The first line of input is the upper-right coordinates of the plateau, the lower-left coordinates are assumed to be 1,1.
 
-The rest of the input is information about the rover. The first line gives the rovers starting position, and the second line is a series of instructions telling the rover how to explore the plateau.
-The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rovers orientation.
+The rest of the input is information about the rover. The first line gives the rovers starting rover, and the second line is a series of instructions telling the rover how to explore the plateau.
+The rover is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rovers orientation.
 
 #### OUTPUT:
 

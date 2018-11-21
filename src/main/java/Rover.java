@@ -1,9 +1,9 @@
-class Position {
+class Rover {
   private final int x;
   private final int y;
   private final String cardinal;
 
-  Position(int x, int y, String cardinal) {
+  Rover(int x, int y, String cardinal) {
     this.x = x;
     this.y = y;
     this.cardinal = cardinal;
@@ -25,24 +25,24 @@ class Position {
     return cardinal.equals(direction);
   }
 
-  public Position turnRight() {
+  public Rover turnRight() {
     if(cardinal.equals("N"))
-      return new Position(x, y, "E");
+      return new Rover(x, y, "E");
     if(cardinal.equals("E"))
-      return new Position(x,y,"S");
+      return new Rover(x,y,"S");
     if(cardinal.equals("S"))
-      return new Position(x,y,"W");
-    return new Position(x,y,"N");
+      return new Rover(x,y,"W");
+    return new Rover(x,y,"N");
   }
 
-  public Position turnLeft() {
+  public Rover turnLeft() {
     if(cardinal.equals("N"))
-      return new Position(x, y, "W");
+      return new Rover(x, y, "W");
     if(cardinal.equals("W"))
-      return new Position(x,y,"S");
+      return new Rover(x,y,"S");
     if(cardinal.equals("S"))
-      return new Position(x,y,"E");
-    return new Position(x,y,"N");
+      return new Rover(x,y,"E");
+    return new Rover(x,y,"N");
 
   }
 }

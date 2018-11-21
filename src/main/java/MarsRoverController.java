@@ -1,4 +1,4 @@
-public class MarsRover {
+public class MarsRoverController {
   private final String NORTH = "N";
   private final String SOUTH = "S";
   private final String EAST = "E";
@@ -14,10 +14,10 @@ public class MarsRover {
 
   private String MOVE_COMMAND = "M";
 
-  private Position position;
+  private Rover rover;
 
-  public MarsRover(Position position) {
-    this.position = position;
+  public MarsRoverController(Rover rover) {
+    this.rover = rover;
   }
 
   public String execute(String input) {
@@ -25,9 +25,9 @@ public class MarsRover {
       if(isMove(command))
         move();
       if(command.equals("R"))
-        position = position.turnRight();
+        rover = rover.turnRight();
       if(command.equals("L"))
-        position = position.turnLeft();
+        rover = rover.turnLeft();
     }
     return formatPosition();
   }
@@ -49,14 +49,14 @@ public class MarsRover {
   }
 
   private boolean facing(String direction) {
-    return position.facing(direction);
+    return rover.facing(direction);
   }
 
   private void moveVertically(int stepSize) {
-    position = new Position(x(), position.y() + stepSize, position.cardinal());
+    rover = new Rover(x(), rover.y() + stepSize, rover.cardinal());
   }
   private void moveHorizontally(int stepSize) {
-    position = new Position(position.x()+stepSize, position.y(), position.cardinal());
+    rover = new Rover(rover.x()+stepSize, rover.y(), rover.cardinal());
   }
 
   private boolean isMove(String command) {
@@ -64,14 +64,14 @@ public class MarsRover {
   }
 
   private String formatPosition() {
-    return String.format(POSITION_FORMAT, x(), y(), position.cardinal());
+    return String.format(POSITION_FORMAT, x(), y(), rover.cardinal());
   }
 
   private int x() {
-    return position.x();
+    return rover.x();
   }
 
   private int y(){
-    return position.y();
+    return rover.y();
   }
 }

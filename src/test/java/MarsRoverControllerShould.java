@@ -4,7 +4,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class MarsRoverShould {
+public class MarsRoverControllerShould {
 
   @ParameterizedTest
   @CsvSource({
@@ -16,8 +16,8 @@ public class MarsRoverShould {
     String expectedCoordinate) {
 
     final String emptyCommand = "";
-    final Position initialPosition = new Position(initialX, initialY, initialCardinal);
-    final MarsRover rover = new MarsRover(initialPosition);
+    final Rover initialRover = new Rover(initialX, initialY, initialCardinal);
+    final MarsRoverController rover = new MarsRoverController(initialRover);
 
     final String actualCoordinate = rover.execute(emptyCommand);
 
@@ -43,8 +43,8 @@ public class MarsRoverShould {
     String commands,
     String expectedCoordinate
   ) {
-    final Position initialPosition = new Position(initialX, initialY, initialCardinal);
-    final MarsRover rover = new MarsRover(initialPosition);
+    final Rover initialRover = new Rover(initialX, initialY, initialCardinal);
+    final MarsRoverController rover = new MarsRoverController(initialRover);
 
     String actualCoordinate = rover.execute(commands);
 
@@ -70,8 +70,8 @@ public class MarsRoverShould {
     String commands,
     String expectedCardinal) {
 
-    final Position initialPosition = new Position(1, 1, initialCardinal);
-    final MarsRover rover = new MarsRover(initialPosition);
+    final Rover initialRover = new Rover(1, 1, initialCardinal);
+    final MarsRoverController rover = new MarsRoverController(initialRover);
 
     final String actualPosition = rover.execute(commands);
 
@@ -90,8 +90,8 @@ public class MarsRoverShould {
     String commands,
     String expectedCoordinate
   ) {
-    final Position initialPosition = new Position(initialX, initialY, initialCardinal);
-    final MarsRover rover = new MarsRover(initialPosition);
+    final Rover initialRover = new Rover(initialX, initialY, initialCardinal);
+    final MarsRoverController rover = new MarsRoverController(initialRover);
 
     String actualCoordinate = rover.execute(commands);
 
