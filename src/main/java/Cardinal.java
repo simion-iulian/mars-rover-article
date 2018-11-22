@@ -1,5 +1,5 @@
 public interface Cardinal {
-  public Cardinal left();
-  public Cardinal right();
-  public String name();
+  Cardinal left();
+  Cardinal right();
+  String name();
 }

@@ -1,8 +1,7 @@
 class Rover {
   private final int x;
   private final int y;
-  private final String cardinal;
-  private final Cardinal otherCardinal;
+  private final Cardinal cardinal;
   private final String NORTH = "N";
   private final String SOUTH = "S";
   private final String EAST = "E";
@@ -13,39 +12,34 @@ class Rover {
   private final int RIGHT = 1;
   private final int LEFT = -1;
 
+  private Cardinal cardinalFor(String cardinal){
+    if(cardinal.equals("N"))
+      return new North();
+    if(cardinal.equals("E"))
+      return new East();
+    if(cardinal.equals("S"))
+      return new South();
+    return new West();
 
+  }
 
   Rover(int x, int y, String cardinal) {
     this.x = x;
     this.y = y;
-    this.cardinal = cardinal;
-    otherCardinal = null;
+    this.cardinal = cardinalFor(cardinal);
   }
 
   private String cardinal() {
-    return cardinal;
+    return cardinal.name();
   }
 
 
   public Rover turnRight() {
-    if(cardinal.equals("N"))
-      return new Rover(x, y, "E");
-    if(cardinal.equals("E"))
-      return new Rover(x,y,"S");
-    if(cardinal.equals("S"))
-      return new Rover(x,y,"W");
-    return new Rover(x,y,"N");
+    return new Rover(x,y, cardinal.right().name());
   }
 
   public Rover turnLeft() {
-    if(cardinal.equals("N"))
-      return new Rover(x, y, "W");
-    if(cardinal.equals("W"))
-      return new Rover(x,y,"S");
-    if(cardinal.equals("S"))
-      return new Rover(x,y,"E");
-    return new Rover(x,y,"N");
-
+    return new Rover(x,y, cardinal.left().name());
   }
 
   Rover move() {
@@ -61,15 +55,15 @@ class Rover {
   }
 
   private boolean facing(String direction) {
-    return cardinal.equals(direction);
+    return cardinal().equals(direction);
   }
 
   private Rover moveVertically(int stepSize) {
-    return new Rover(x, y + stepSize, cardinal);
+    return new Rover(x, y + stepSize, cardinal());
   }
 
   private Rover moveHorizontally(int stepSize) {
-    return new Rover(x + stepSize, y, cardinal);
+    return new Rover(x + stepSize, y, cardinal());
   }
 
   String formatPosition() {
