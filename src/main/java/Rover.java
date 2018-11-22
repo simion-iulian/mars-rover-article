@@ -19,14 +19,6 @@ class Rover {
     this.cardinal = cardinal;
   }
 
-  public int x() {
-    return x;
-  }
-
-  public int y() {
-    return y;
-  }
-
   public String cardinal() {
     return cardinal;
   }
@@ -79,6 +71,6 @@ class Rover {
 
   String formatPosition() {
     String POSITION_FORMAT = "%d %d %s";
-    return String.format(POSITION_FORMAT, x(), y(), cardinal());
+    return String.format(POSITION_FORMAT, x, y, cardinal());
   }
 }

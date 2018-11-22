@@ -1,10 +1,10 @@
 public class MarsRoverController {
-  public static final String RIGHT_COMMAND = "R";
-  public static final String LEFT_COMMAND = "L";
+  private final String MOVE_COMMAND = "M";
+  private final String RIGHT_COMMAND = "R";
+  private final String LEFT_COMMAND = "L";
 
   private final String INTO_CHARACTERS = "";
 
-  private String MOVE_COMMAND = "M";
 
   private Rover rover;
 
