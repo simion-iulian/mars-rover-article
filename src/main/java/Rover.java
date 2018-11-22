@@ -12,34 +12,21 @@ class Rover {
   private final int RIGHT = 1;
   private final int LEFT = -1;
 
-  private Cardinal cardinalFor(String cardinal){
-    if(cardinal.equals("N"))
-      return new North();
-    if(cardinal.equals("E"))
-      return new East();
-    if(cardinal.equals("S"))
-      return new South();
-    return new West();
 
-  }
-
-  Rover(int x, int y, String cardinal) {
+  Rover(int x, int y, Cardinal cardinal) {
     this.x = x;
     this.y = y;
-    this.cardinal = cardinalFor(cardinal);
+    this.cardinal = cardinal;
   }
 
-  private String cardinal() {
-    return cardinal.name();
-  }
 
 
   public Rover turnRight() {
-    return new Rover(x,y, cardinal.right().name());
+    return new Rover(x,y, cardinal.right());
   }
 
   public Rover turnLeft() {
-    return new Rover(x,y, cardinal.left().name());
+    return new Rover(x,y, cardinal.left());
   }
 
   Rover move() {
@@ -55,19 +42,19 @@ class Rover {
   }
 
   private boolean facing(String direction) {
-    return cardinal().equals(direction);
+    return cardinal.name().equals(direction);
   }
 
   private Rover moveVertically(int stepSize) {
-    return new Rover(x, y + stepSize, cardinal());
+    return new Rover(x, y + stepSize, cardinal);
   }
 
   private Rover moveHorizontally(int stepSize) {
-    return new Rover(x + stepSize, y, cardinal());
+    return new Rover(x + stepSize, y, cardinal);
   }
 
   String formatPosition() {
     String POSITION_FORMAT = "%d %d %s";
-    return String.format(POSITION_FORMAT, x, y, cardinal());
+    return String.format(POSITION_FORMAT, x, y, cardinal.name());
   }
 }

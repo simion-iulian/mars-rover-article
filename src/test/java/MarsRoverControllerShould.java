@@ -16,7 +16,7 @@ public class MarsRoverControllerShould {
     String expectedCoordinate) {
 
     final String emptyCommand = "";
-    final Rover initialRover = new Rover(initialX, initialY, initialCardinal);
+    final Rover initialRover = new Rover(initialX, initialY, cardinalFor(initialCardinal));
     final MarsRoverController rover = new MarsRoverController(initialRover);
 
     final String actualCoordinate = rover.execute(emptyCommand);
@@ -43,7 +43,7 @@ public class MarsRoverControllerShould {
     String commands,
     String expectedCoordinate
   ) {
-    final Rover initialRover = new Rover(initialX, initialY, initialCardinal);
+    final Rover initialRover = new Rover(initialX, initialY, cardinalFor(initialCardinal));
     final MarsRoverController rover = new MarsRoverController(initialRover);
 
     String actualCoordinate = rover.execute(commands);
@@ -70,7 +70,7 @@ public class MarsRoverControllerShould {
     String commands,
     String expectedCardinal) {
 
-    final Rover initialRover = new Rover(1, 1, initialCardinal);
+    final Rover initialRover = new Rover(1, 1, cardinalFor(initialCardinal));
     final MarsRoverController rover = new MarsRoverController(initialRover);
 
     final String actualPosition = rover.execute(commands);
@@ -90,12 +90,22 @@ public class MarsRoverControllerShould {
     String commands,
     String expectedCoordinate
   ) {
-    final Rover initialRover = new Rover(initialX, initialY, initialCardinal);
+    final Rover initialRover = new Rover(initialX, initialY, cardinalFor(initialCardinal));
     final MarsRoverController rover = new MarsRoverController(initialRover);
 
     String actualCoordinate = rover.execute(commands);
 
     assertThat(actualCoordinate, is(expectedCoordinate));
   }
+
+    Cardinal cardinalFor(String cardinal) {
+      if (cardinal.equals("N"))
+        return new North();
+      if (cardinal.equals("E"))
+        return new East();
+      if (cardinal.equals("S"))
+        return new South();
+      return new West();
+    }
 
 }
