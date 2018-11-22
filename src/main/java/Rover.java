@@ -2,7 +2,7 @@ class Rover {
   private final int x;
   private final int y;
   private final String cardinal;
-
+  private final Cardinal otherCardinal;
   private final String NORTH = "N";
   private final String SOUTH = "S";
   private final String EAST = "E";
@@ -13,13 +13,16 @@ class Rover {
   private final int RIGHT = 1;
   private final int LEFT = -1;
 
+
+
   Rover(int x, int y, String cardinal) {
     this.x = x;
     this.y = y;
     this.cardinal = cardinal;
+    otherCardinal = null;
   }
 
-  public String cardinal() {
+  private String cardinal() {
     return cardinal;
   }
 
