@@ -1,8 +1,11 @@
 package com.codurance.cardinal;
 
+import com.codurance.Rover;
+
 import java.util.Objects;
 
 public class North implements Cardinal {
+  private final int stepSize = 1;
   private String name = "N";
   @Override
   public Cardinal left() {
@@ -12,6 +15,11 @@ public class North implements Cardinal {
   @Override
   public Cardinal right() {
     return new East();
+  }
+
+  @Override
+  public Rover move(int x, int y) {
+    return new Rover(x, y + stepSize, this);
   }
 
   @Override

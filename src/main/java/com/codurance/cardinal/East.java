@@ -1,5 +1,7 @@
 package com.codurance.cardinal;
 
+import com.codurance.Rover;
+
 import java.util.Objects;
 
 public class East implements Cardinal{
@@ -12,6 +14,11 @@ public class East implements Cardinal{
   @Override
   public Cardinal right() {
     return new South();
+  }
+
+  @Override
+  public Rover move(int x, int y) {
+    return null;
   }
 
   @Override

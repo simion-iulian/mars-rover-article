@@ -2,10 +2,11 @@ package com.codurance;
 
 import com.codurance.cardinal.Cardinal;
 
-class Rover {
+public class Rover {
   private final int x;
   private final int y;
   private final Cardinal cardinal;
+
   private final String NORTH = "N";
   private final String SOUTH = "S";
   private final String EAST = "E";
@@ -17,7 +18,7 @@ class Rover {
   private final int LEFT = -1;
 
 
-  Rover(int x, int y, Cardinal cardinal) {
+  public Rover(int x, int y, Cardinal cardinal) {
     this.x = x;
     this.y = y;
     this.cardinal = cardinal;
@@ -35,7 +36,7 @@ class Rover {
 
   Rover move() {
     if(facing(NORTH))
-      return moveVertically(UP);
+      return cardinal.move(x,y);
     if(facing(SOUTH))
       return moveVertically(DOWN);
     if(facing(EAST))
