@@ -1,15 +1,17 @@
+package com.codurance.cardinal;
+
 import java.util.Objects;
 
-public class South implements Cardinal{
-  private String name = "S";
+public class North implements Cardinal {
+  private String name = "N";
   @Override
   public Cardinal left() {
-    return new East();
+    return new West();
   }
 
   @Override
   public Cardinal right() {
-    return new West();
+    return new East();
   }
 
   @Override
@@ -21,8 +23,8 @@ public class South implements Cardinal{
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
-    South south = (South) o;
-    return Objects.equals(name, south.name);
+    North north = (North) o;
+    return Objects.equals(name, north.name);
   }
 
   @Override

@@ -1,3 +1,7 @@
+package com.codurance;
+
+import com.codurance.cardinal.Cardinal;
+
 class Rover {
   private final int x;
   private final int y;

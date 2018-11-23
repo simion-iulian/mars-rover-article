@@ -1,3 +1,5 @@
+package com.codurance;
+
 public class MarsRoverController {
   private final String MOVE_COMMAND = "M";
   private final String RIGHT_COMMAND = "R";

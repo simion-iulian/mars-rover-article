@@ -1,3 +1,10 @@
+package com.codurance.cardinal;
+
+import com.codurance.cardinal.Cardinal;
+import com.codurance.cardinal.East;
+import com.codurance.cardinal.South;
+import com.codurance.cardinal.West;
+
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;

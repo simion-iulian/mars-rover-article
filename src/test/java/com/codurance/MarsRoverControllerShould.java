@@ -1,3 +1,11 @@
+package com.codurance;
+
+import com.codurance.cardinal.Cardinal;
+import com.codurance.cardinal.East;
+import com.codurance.cardinal.North;
+import com.codurance.cardinal.South;
+import com.codurance.cardinal.West;
+
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -98,7 +106,7 @@ public class MarsRoverControllerShould {
     assertThat(actualCoordinate, is(expectedCoordinate));
   }
 
-    Cardinal cardinalFor(String cardinal) {
+    private Cardinal cardinalFor(String cardinal) {
       if (cardinal.equals("N"))
         return new North();
       if (cardinal.equals("E"))
