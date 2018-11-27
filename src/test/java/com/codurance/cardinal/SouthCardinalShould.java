@@ -1,5 +1,6 @@
 package com.codurance.cardinal;
 
+import com.codurance.Rover;
 import com.codurance.cardinal.Cardinal;
 import com.codurance.cardinal.East;
 import com.codurance.cardinal.South;
@@ -30,5 +31,13 @@ public class SouthCardinalShould {
     final String actual = new South().name();
 
     assertThat(actual, is("S"));
+  }
+  @Test
+  public void
+  move_vertically() {
+    final Rover expected = new Rover(1, 1, new South());
+    final Rover actual = new South().move(1, 2);
+
+    assertThat(actual, is(expected));
   }
 }

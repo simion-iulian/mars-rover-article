@@ -6,6 +6,7 @@ import java.util.Objects;
 
 public class South implements Cardinal{
   private String name = "S";
+
   @Override
   public Cardinal left() {
     return new East();
@@ -18,7 +19,8 @@ public class South implements Cardinal{
 
   @Override
   public Rover move(int x, int y) {
-    return null;
+    int stepSize = -1;
+    return new Rover(x, y + stepSize, this);
   }
 
   @Override

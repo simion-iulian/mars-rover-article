@@ -32,6 +32,7 @@ public class MarsRoverControllerShould {
     assertThat(actualCoordinate, is(expectedCoordinate));
   }
 
+
   @ParameterizedTest
   @CsvSource({
     "1, 2, N, M, '1 3 N'",
