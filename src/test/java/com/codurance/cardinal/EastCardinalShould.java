@@ -1,5 +1,6 @@
 package com.codurance.cardinal;
 
+import com.codurance.Rover;
 import com.codurance.cardinal.Cardinal;
 import com.codurance.cardinal.East;
 import com.codurance.cardinal.North;
@@ -31,5 +32,16 @@ public class EastCardinalShould {
 
     assertThat(actual, is("E"));
   }
+
+  @Test
+  public void
+  move_horizontally() {
+
+    final Rover expected = new Rover(2, 1, new East());
+    final Rover actual = new East().move(1, 1);
+
+    assertThat(actual, is(expected));
+  }
+
 
 }

@@ -18,7 +18,8 @@ public class West implements Cardinal {
 
   @Override
   public Rover move(int x, int y) {
-    return null;
+    final int stepSize = -1;
+    return new Rover(x+ stepSize, y, this);
   }
 
   @Override
