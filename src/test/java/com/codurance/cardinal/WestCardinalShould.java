@@ -15,20 +15,20 @@ public class WestCardinalShould {
 
   @Test
   void be_facing_north_when_turned_right() {
-    final Cardinal actual = new West().right();
+    final Cardinal actual = new West(1,1).right();
 
-    assertThat(actual, is(new North()));
+    assertThat(actual, is(new North(1,1)));
   }
 
   @Test
   void be_facing_south_when_turned_left() {
-    final Cardinal actual = new West().left();
+    final Cardinal actual = new West(1,1).left();
 
-    assertThat(actual, is(new South()));
+    assertThat(actual, is(new South(1,1)));
   }
   @Test
   void give_cardinal_name() {
-    final String actual = new West().name();
+    final String actual = new West(1,1).name();
 
     assertThat(actual, is("W"));
   }
@@ -36,8 +36,8 @@ public class WestCardinalShould {
   public void
   move_horizontally() {
 
-    final Rover expected = new Rover(1, 1, new West());
-    final Rover actual = new West().move(2, 1);
+    final Cardinal expected = new West(2,1);
+    final Cardinal actual = new West(1,1).move();
 
     assertThat(actual, is(expected));
   }

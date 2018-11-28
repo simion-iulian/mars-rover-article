@@ -1,5 +1,7 @@
 package com.codurance;
 
+import com.codurance.cardinal.Cardinal;
+
 public class MarsRoverController {
   private final String MOVE_COMMAND = "M";
   private final String RIGHT_COMMAND = "R";
@@ -8,9 +10,9 @@ public class MarsRoverController {
   private final String INTO_CHARACTERS = "";
 
 
-  private Rover rover;
+  private Cardinal rover;
 
-  public MarsRoverController(Rover rover) {
+  public MarsRoverController(Cardinal rover) {
     this.rover = rover;
   }
 
@@ -19,9 +21,9 @@ public class MarsRoverController {
       if(isMove(command))
         rover = rover.move();
       if(isTurnRight(command))
-        rover = rover.turnRight();
+        rover = rover.right();
       if(isTurnLeft(command))
-        rover = rover.turnLeft();
+        rover = rover.left();
     }
     return rover.formatPosition();
   }

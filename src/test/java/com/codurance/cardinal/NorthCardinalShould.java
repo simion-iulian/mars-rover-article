@@ -16,8 +16,8 @@ public class NorthCardinalShould {
   @Test
   void be_facing_east_when_turned_right() {
 
-    final Cardinal actual = new North().right();
-    final Cardinal expected = new East();
+    final Cardinal actual = new North(1,1).right();
+    final Cardinal expected = new East(1,1);
 
     assertThat(actual, is(expected));
   }
@@ -25,15 +25,15 @@ public class NorthCardinalShould {
   @Test
   void be_facing_west_when_turned_left() {
 
-    final Cardinal actual = new North().left();
-    final Cardinal expected = new West();
+    final Cardinal actual = new North(1,1).left();
+    final Cardinal expected = new West(1,1);
 
     assertThat(actual, is(expected));
   }
   @Test
   void give_cardinal_name() {
 
-    final String actual = new North().name();
+    final String actual = new North(1,1).name();
 
     assertThat(actual, is("N"));
   }
@@ -42,8 +42,8 @@ public class NorthCardinalShould {
   public void
   move_vertically() {
 
-    final Rover expected = new Rover(1, 2, new North());
-    final Rover actual = new North().move(1, 1);
+    final Cardinal expected = new North(1,2);
+    final Cardinal actual = new North(1,1).move();
 
     assertThat(actual, is(expected));
   }

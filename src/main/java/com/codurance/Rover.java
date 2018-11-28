@@ -25,14 +25,11 @@ public class Rover {
     return new Rover(x,y, cardinal.left());
   }
 
-  Rover move() {
-      return cardinal.move(x,y);
+  Cardinal move() {
+      return cardinal.move();
   }
 
-  String formatPosition() {
-    String POSITION_FORMAT = "%d %d %s";
-    return String.format(POSITION_FORMAT, x, y, cardinal.name());
-  }
+
 
   @Override
   public boolean equals(Object o) {

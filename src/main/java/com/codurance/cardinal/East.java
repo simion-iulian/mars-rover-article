@@ -4,22 +4,28 @@ import com.codurance.Rover;
 
 import java.util.Objects;
 
-public class East implements Cardinal{
+public class East extends Cardinal {
   private String name = "E";
+
+  public East(int initialX, int initialY) {
+    super(initialX,initialY);
+
+  }
+
   @Override
   public Cardinal left() {
-    return new North();
+    return new North(x,y);
   }
 
   @Override
   public Cardinal right() {
-    return new South();
+    return new South(x,y);
   }
 
   @Override
-  public Rover move(int x, int y) {
+  public Cardinal move() {
     final int stepSize = 1;
-    return new Rover(x+ stepSize, y, this);
+    return new East(x+ stepSize, y);
   }
 
   @Override
