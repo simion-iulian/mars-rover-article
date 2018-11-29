@@ -1,29 +1,27 @@
-package com.codurance.cardinal;
-
-import com.codurance.Rover;
+package com.codurance.rover;
 
 import java.util.Objects;
 
-public class West extends Cardinal {
+public class RoverFacingWest extends Rover {
   private String name = "W";
 
-  public West (int initialX, int initialY) {
+  public RoverFacingWest(int initialX, int initialY) {
     super(initialX, initialY);
   }
 
   @Override
-  public Cardinal left() {
-    return new South(x, y);
+  public Rover left() {
+    return new RoverFacingSouth(x, y);
   }
   @Override
-  public Cardinal right() {
-    return new North(x, y);
+  public Rover right() {
+    return new RoverFacingNorth(x, y);
   }
 
   @Override
-  public Cardinal move() {
+  public Rover move() {
     final int stepSize = -1;
-    return new West(x,y+stepSize);
+    return new RoverFacingWest(x+stepSize,y);
   }
 
   @Override
@@ -35,8 +33,8 @@ public class West extends Cardinal {
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
-    West west = (West) o;
-    return Objects.equals(name, west.name);
+    RoverFacingWest roverFacingWest = (RoverFacingWest) o;
+    return Objects.equals(name, roverFacingWest.name);
   }
 
   @Override

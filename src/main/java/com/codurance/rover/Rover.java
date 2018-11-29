@@ -1,20 +1,18 @@
-package com.codurance.cardinal;
+package com.codurance.rover;
 
 
-import com.codurance.Rover;
-
-public abstract class Cardinal {
+public abstract class Rover {
   protected final int x;
   protected final int y;
 
-  public Cardinal(int initialX, int initialY) {
+  public Rover(int initialX, int initialY) {
     this.x = initialX;
     this.y = initialY;
   }
 
-  public abstract Cardinal left();
-  public abstract Cardinal right();
-  public abstract Cardinal move();
+  public abstract Rover left();
+  public abstract Rover right();
+  public abstract Rover move();
   public abstract String name();
 
   public String formatPosition() {
