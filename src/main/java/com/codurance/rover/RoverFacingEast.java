@@ -7,7 +7,6 @@ public class RoverFacingEast extends Rover {
 
   public RoverFacingEast(int initialX, int initialY) {
     super(initialX,initialY);
-
   }
 
   @Override

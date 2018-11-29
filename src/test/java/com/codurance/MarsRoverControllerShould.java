@@ -24,7 +24,7 @@ public class MarsRoverControllerShould {
     String expectedCoordinate) {
 
     final String emptyCommand = "";
-    final Rover initialRover = cardinalFor(initialX, initialY, initialCardinal);
+    final Rover initialRover = roverFor(initialX, initialY, initialCardinal);
     final MarsRoverController rover = new MarsRoverController(initialRover);
 
     final String actualCoordinate = rover.execute(emptyCommand);
@@ -32,7 +32,7 @@ public class MarsRoverControllerShould {
     assertThat(actualCoordinate, is(expectedCoordinate));
   }
 
-  private Rover cardinalFor(int initialX, int initialY, String initialCardinal) {
+  private Rover roverFor(int initialX, int initialY, String initialCardinal) {
     if (initialCardinal.equals("N"))
       return new RoverFacingNorth(initialX, initialY);
     if (initialCardinal.equals("E"))
@@ -62,7 +62,7 @@ public class MarsRoverControllerShould {
     String commands,
     String expectedCoordinate
   ) {
-    final Rover initialRover = cardinalFor(initialX, initialY, initialCardinal);
+    final Rover initialRover = roverFor(initialX, initialY, initialCardinal);
     final MarsRoverController rover = new MarsRoverController(initialRover);
 
     String actualCoordinate = rover.execute(commands);
@@ -89,7 +89,7 @@ public class MarsRoverControllerShould {
     String commands,
     String expectedCardinal) {
 
-    final Rover initialRover = cardinalFor(1, 1, initialCardinal);
+    final Rover initialRover = roverFor(1, 1, initialCardinal);
     final MarsRoverController rover = new MarsRoverController(initialRover);
 
     final String actualPosition = rover.execute(commands);
@@ -109,7 +109,7 @@ public class MarsRoverControllerShould {
     String commands,
     String expectedCoordinate
   ) {
-    final Rover initialRover = cardinalFor(initialX, initialY, initialCardinal);
+    final Rover initialRover = roverFor(initialX, initialY, initialCardinal);
     final MarsRoverController rover = new MarsRoverController(initialRover);
 
     String actualCoordinate = rover.execute(commands);

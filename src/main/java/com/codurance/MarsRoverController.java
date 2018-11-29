@@ -3,13 +3,6 @@ package com.codurance;
 import com.codurance.rover.Rover;
 
 public class MarsRoverController {
-  private final String MOVE_COMMAND = "M";
-  private final String RIGHT_COMMAND = "R";
-  private final String LEFT_COMMAND = "L";
-
-  private final String INTO_CHARACTERS = "";
-
-
   private Rover rover;
 
   public MarsRoverController(Rover rover) {
@@ -29,15 +22,19 @@ public class MarsRoverController {
   }
 
   private boolean isTurnLeft(String command) {
+    String LEFT_COMMAND = "L";
     return command.equals(LEFT_COMMAND);
   }
   private boolean isTurnRight(String command) {
+    String RIGHT_COMMAND = "R";
     return command.equals(RIGHT_COMMAND);
   }
   private boolean isMove(String command) {
+    String MOVE_COMMAND = "M";
     return command.equals(MOVE_COMMAND);
   }
   private String[] commandsFrom(String input) {
+    String INTO_CHARACTERS = "";
     return input.split(INTO_CHARACTERS);
   }
 
