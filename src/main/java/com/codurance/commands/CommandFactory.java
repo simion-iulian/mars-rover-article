@@ -2,24 +2,28 @@ package com.codurance.commands;
 
 import com.codurance.rover.Rover;
 
+import java.util.HashMap;
+import java.util.Map;
 public class CommandFactory {
   private Rover rover;
 
+  private Map<String, Command> commands;
+
   public CommandFactory(Rover rover) {
     this.rover = rover;
+    initializeCommands(rover);
   }
 
-
   public Command commandFrom(String command) {
-    if(command.equals("M")) {
-      return new MoveCommand(rover);
-    }
-    if(command.equals("R")) {
-      return new TurnRightCommand(rover);
-    }
-    if(command.equals("L")) {
-      return new TurnLeftCommand(rover);
-    }
-    return new EmptyCommand(rover);
+      return commands.get(command);
+  }
+
+  private void initializeCommands(Rover rover) {
+    commands = new HashMap<String,Command>(){{
+      put("M", new MoveCommand(rover));
+      put("L", new TurnLeftCommand(rover));
+      put("R", new TurnRightCommand(rover));
+      put("", new EmptyCommand(rover));
+    }};
   }
 }

@@ -11,9 +11,10 @@ public class MarsRoverController {
     this.rover = rover;
   }
 
-  public String execute(String input) {
+  public String execute(String input){
     for (String command : commandsFrom(input)) {
-        rover = new CommandFactory(rover).commandFrom(command).execute();
+        rover = new CommandFactory(rover)
+          .commandFrom(command).execute();
     }
     return rover.formatPosition();
   }
