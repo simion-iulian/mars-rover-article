@@ -1,8 +1,6 @@
-package com.codurance;
+package com.codurance.commands;
 
 import com.codurance.rover.Rover;
-
-import java.sql.PreparedStatement;
 
 public class CommandFactory {
   private Rover rover;

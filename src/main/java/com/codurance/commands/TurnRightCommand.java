@@ -1,4 +1,4 @@
-package com.codurance;
+package com.codurance.commands;
 
 import com.codurance.rover.Rover;
 

@@ -1,5 +1,6 @@
 package com.codurance;
 
+import com.codurance.commands.CommandFactory;
 import com.codurance.rover.Rover;
 
 public class MarsRoverController {
