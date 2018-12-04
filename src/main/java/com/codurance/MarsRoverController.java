@@ -3,15 +3,27 @@ package com.codurance;
 import com.codurance.rover.Rover;
 
 public class MarsRoverController {
+
+
   private Rover rover;
   public MarsRoverController(Rover rover) {
     this.rover = rover;
   }
 
   public String execute(String input) {
+
+
     for (String command : commandsFrom(input)) {
-      if(isMove(command))      rover = rover.move();
-      if(isTurnRight(command)) rover = rover.right();
+      if(isMove(command))
+      {
+//        rover = rover.move();
+
+        rover = new CommandFactory(rover).commandFrom(command).execute();
+      }
+
+      if(isTurnRight(command)) {
+        rover = new CommandFactory(rover).commandFrom(command).execute();
+      }
       if(isTurnLeft(command))  rover = rover.left();
     }
     return rover.formatPosition();
