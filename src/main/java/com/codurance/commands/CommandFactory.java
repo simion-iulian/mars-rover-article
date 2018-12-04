@@ -5,12 +5,9 @@ import com.codurance.rover.Rover;
 import java.util.HashMap;
 import java.util.Map;
 public class CommandFactory {
-  private Rover rover;
-
   private Map<String, Command> commands;
 
   public CommandFactory(Rover rover) {
-    this.rover = rover;
     initializeCommands(rover);
   }
 

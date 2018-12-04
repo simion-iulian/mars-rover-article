@@ -14,7 +14,7 @@ public class MarsRoverController {
   public String execute(String input){
     for (String command : commandsFrom(input)) {
         rover = new CommandFactory(rover)
-          .commandFrom(command).execute();
+                .commandFrom(command).execute();
     }
     return rover.formatPosition();
   }
