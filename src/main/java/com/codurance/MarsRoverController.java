@@ -4,8 +4,6 @@ import com.codurance.commands.CommandFactory;
 import com.codurance.rover.Rover;
 
 public class MarsRoverController {
-
-
   private Rover rover;
   public MarsRoverController(Rover rover) {
     this.rover = rover;
