@@ -11,20 +11,8 @@ public class MarsRoverController {
   }
 
   public String execute(String input) {
-
-
     for (String command : commandsFrom(input)) {
-      if(isMove(command))
-      {
-//        rover = rover.move();
-
         rover = new CommandFactory(rover).commandFrom(command).execute();
-      }
-
-      if(isTurnRight(command)) {
-        rover = new CommandFactory(rover).commandFrom(command).execute();
-      }
-      if(isTurnLeft(command))  rover = rover.left();
     }
     return rover.formatPosition();
   }

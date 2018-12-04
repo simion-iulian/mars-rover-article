@@ -19,6 +19,9 @@ public class CommandFactory {
     if(command.equals("R")) {
       return new TurnRightCommand(rover);
     }
-    throw new UnsupportedOperationException();
+    if(command.equals("L")) {
+      return new TurnLeftCommand(rover);
+    }
+    return new EmptyCommand(rover);
   }
 }
